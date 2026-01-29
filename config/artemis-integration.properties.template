@@ -16,23 +16,27 @@
 #
 
 # Artemis1981 Integration Properties
-# Configuration for linking Spark with Jury1981/Artemis1981 repository
+# Configuration framework for organizing settings related to Jury1981/Artemis1981 repository
+#
+# Note: These properties provide a structured configuration framework. Actual integration
+# with the Artemis1981 repository would require additional implementation based on
+# specific integration requirements.
 #
 # To use this configuration, copy it to conf/artemis-integration.properties:
 #   cp config/artemis-integration.properties.template conf/artemis-integration.properties
 
-# Repository Settings
+# Repository Settings (Configuration framework)
 artemis.repository.owner=Jury1981
 artemis.repository.name=Artemis1981
 artemis.repository.url=https://github.com/Jury1981/Artemis1981
 
-# Integration Settings
+# Integration Settings (Configuration framework)
 artemis.integration.mode=active
 artemis.integration.protocol=https
 artemis.data.sync.enabled=true
 artemis.data.sync.frequency=300
 
-# Neural Network Coordination
+# Neural Network Coordination (Configuration framework)
 artemis.neuralnet.coordination=enabled
 artemis.neuralnet.dataflow=bidirectional
 artemis.neuralnet.format=json

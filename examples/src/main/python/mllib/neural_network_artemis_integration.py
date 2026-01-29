@@ -17,16 +17,21 @@
 #
 
 """
-Spark Neural Network Integration Example with Artemis1981
+Spark Neural Network Integration Example with Artemis1981 Configuration
 
-This example demonstrates how to use Spark MLlib's neural network capabilities
-integrated with the Artemis1981 repository for mobile broadband neuro network processing.
+This example demonstrates how to use Spark MLlib's MultilayerPerceptronClassifier
+(native neural network support) along with a configuration framework for potential
+integration with the Artemis1981 repository for mobile broadband neuro network processing.
+
+Note: This example demonstrates Spark's built-in neural network capabilities. The
+Artemis1981 configuration properties shown are part of a configuration framework and
+would require additional implementation for actual integration.
 
 Usage:
     spark-submit neural_network_artemis_integration.py
 
 This example uses the MultilayerPerceptronClassifier from Spark MLlib
-and demonstrates configuration for Artemis1981 integration.
+and demonstrates a configuration framework for Artemis1981 integration.
 """
 
 from pyspark.sql import SparkSession
@@ -36,7 +41,7 @@ from pyspark.ml.linalg import Vectors
 
 
 def create_spark_session():
-    """Create and configure Spark session with Neural Network settings."""
+    """Create and configure Spark session with Neural Network and integration settings."""
     spark = SparkSession.builder \
         .appName("NeuralNetworkArtemisIntegration") \
         .config("spark.mllib.neuralnetwork.enabled", "true") \
@@ -45,12 +50,13 @@ def create_spark_session():
         .getOrCreate()
     
     print("=" * 80)
-    print("Spark Neural Network Integration with Artemis1981")
+    print("Spark Neural Network with Artemis1981 Configuration Framework")
     print("=" * 80)
     print(f"Spark Version: {spark.version}")
-    print(f"Neural Network Enabled: {spark.conf.get('spark.mllib.neuralnetwork.enabled', 'false')}")
-    print(f"Artemis Integration: {spark.conf.get('spark.artemis.integration.enabled', 'false')}")
+    print(f"Neural Network Config Flag: {spark.conf.get('spark.mllib.neuralnetwork.enabled', 'false')}")
+    print(f"Artemis Config Flag: {spark.conf.get('spark.artemis.integration.enabled', 'false')}")
     print(f"Artemis Repository: {spark.conf.get('spark.artemis.repository', 'not set')}")
+    print("Note: Custom properties above are configuration framework settings")
     print("=" * 80)
     
     return spark
@@ -131,14 +137,14 @@ def main():
         print("\nPrediction Results:")
         predictions.select("features", "label", "prediction").show()
         
-        # Artemis1981 Integration Status
+        # Artemis1981 Configuration Framework Status
         print("\n" + "=" * 80)
-        print("Artemis1981 Integration Status")
+        print("Summary")
         print("=" * 80)
-        print("✓ Spark Neural Network configured and operational")
-        print("✓ Mobile Broadband Neuro Network processing enabled")
-        print("✓ Artemis1981 repository integration configured")
-        print("✓ Data synchronization settings applied")
+        print("✓ Spark MLlib MultilayerPerceptronClassifier demonstrated")
+        print("✓ Neural network training and prediction completed")
+        print("✓ Configuration framework for Artemis1981 applied")
+        print("  (Configuration properties can be used for custom integration)")
         print("=" * 80)
         
     finally:

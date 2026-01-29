@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository extends Apache Spark with integrated Neural Network capabilities and links to the [Jury1981/Artemis1981](https://github.com/Jury1981/Artemis1981) repository for enhanced mobile broadband neuro network processing.
+This repository provides configuration templates and examples for using Apache Spark's built-in Neural Network capabilities (MLlib) and establishes a configuration framework to integrate with the [Jury1981/Artemis1981](https://github.com/Jury1981/Artemis1981) repository for mobile broadband neuro network processing.
 
 ## Quick Start
 
@@ -40,11 +40,11 @@ Run the neural network integration example:
 
 ## Features
 
-- ✅ **Neural Network Integration**: Fully configured Spark MLlib neural network support
-- ✅ **Artemis1981 Link**: Integration with Jury1981/Artemis1981 repository
-- ✅ **Mobile Broadband Processing**: Optimized for broadband neuro network operations
-- ✅ **Distributed Training**: Leverage Spark's distributed computing capabilities
-- ✅ **Configuration Templates**: Pre-configured settings for neural network operations
+- ✅ **Neural Network Support**: Examples using Spark MLlib's MultilayerPerceptronClassifier
+- ✅ **Artemis1981 Configuration**: Configuration templates for linking to Jury1981/Artemis1981 repository
+- ✅ **Configuration Framework**: Structured settings for neural network and integration operations
+- ✅ **Distributed Training**: Leverages Spark's built-in distributed computing capabilities
+- ✅ **Documentation**: Comprehensive guides and examples for neural network usage
 
 ## Architecture
 
@@ -139,4 +139,4 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) file for 
 - [Apache Spark Official Site](https://spark.apache.org/)
 - [Spark MLlib Documentation](https://spark.apache.org/docs/latest/ml-guide.html)
 - [Jury1981/Artemis1981 Repository](https://github.com/Jury1981/Artemis1981)
-- [Spark Mobile Broadband Neuro Network](https://github.com/Jury1981/spark--Mobile-Broadbandwidth-Neuro-Network)
+- [Spark Mobile Broadband Neuro Network](https://github.com/Jury1981/spark--Mobile-Broadband-Neuro-Network)

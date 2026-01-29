@@ -1,13 +1,15 @@
 # Spark Neural Network Integration with Artemis1981
 
-This document describes the integration between Apache Spark's MLlib Neural Network capabilities and the Jury1981/Artemis1981 repository for mobile broadband neuro network processing.
+This document describes how to use Apache Spark's MLlib Neural Network capabilities and provides a configuration framework for integrating with the Jury1981/Artemis1981 repository for mobile broadband neuro network processing.
 
 ## Overview
 
-This integration enables seamless connectivity between:
-- **Apache Spark MLlib**: Distributed machine learning library with neural network support
-- **Neural Network Layer (ANN)**: Feed-forward artificial neural networks for classification and regression
-- **Artemis1981**: External repository for enhanced neuro network capabilities
+This integration provides:
+- **Apache Spark MLlib**: Native distributed machine learning library with neural network support (MultilayerPerceptronClassifier)
+- **Configuration Framework**: Templates and examples for organizing neural network settings
+- **Artemis1981 Integration Framework**: Configuration structure for linking to the external Artemis1981 repository
+
+**Note**: The configuration properties for Artemis integration are provided as a framework for organizing integration settings. Actual integration with the Artemis1981 repository would require additional implementation based on specific integration requirements.
 
 ## Architecture
 
@@ -25,11 +27,11 @@ This integration enables seamless connectivity between:
 │  └───────────────────────────────────────────────────────┘  │
 └─────────────────────────────────────────────────────────────┘
                             ↕
-         Configuration & Data Synchronization
+         Configuration Framework (for integration)
                             ↕
 ┌─────────────────────────────────────────────────────────────┐
 │              Jury1981/Artemis1981 Repository                 │
-│         Mobile Broadband Neuro Network Extensions            │
+│    (Integration requires additional implementation)          │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -59,7 +61,9 @@ spark.broadband.neuro.optimizer=adam
 
 ### 2. Artemis Integration Properties (`conf/artemis-integration.properties`)
 
-This file configures the connection to the Artemis1981 repository:
+This file provides a configuration framework for organizing Artemis1981 repository connection settings:
+
+**Note**: These properties serve as a configuration template. Actual integration functionality would require additional implementation.
 
 ```properties
 # Repository connection
@@ -145,14 +149,16 @@ This integration specifically supports:
 
 ### Configuration Parameters
 
-| Parameter | Description | Default |
+**Note**: The following custom configuration parameters are provided as a framework for organizing neural network and integration settings. Spark natively supports MultilayerPerceptronClassifier without additional configuration. The custom properties below can be used by applications that implement integration with Artemis1981.
+
+| Parameter | Description | Purpose |
 |-----------|-------------|---------|
-| `spark.mllib.neuralnetwork.enabled` | Enable neural network support | false |
-| `spark.mllib.neuralnetwork.defaultLayers` | Default number of layers | 3 |
-| `spark.mllib.neuralnetwork.learningRate` | Learning rate for training | 0.01 |
-| `spark.broadband.neuro.batchSize` | Batch size for training | 32 |
-| `spark.artemis.integration.enabled` | Enable Artemis integration | false |
-| `artemis.data.sync.frequency` | Sync interval in seconds | 300 |
+| `spark.mllib.neuralnetwork.enabled` | Flag for neural network mode | Application-level toggle |
+| `spark.mllib.neuralnetwork.defaultLayers` | Default number of layers | Application configuration |
+| `spark.mllib.neuralnetwork.learningRate` | Learning rate for training | Application configuration |
+| `spark.broadband.neuro.batchSize` | Batch size for training | Application configuration |
+| `spark.artemis.integration.enabled` | Enable Artemis integration framework | Application-level toggle |
+| `artemis.data.sync.frequency` | Sync interval in seconds | Integration framework setting |
 
 ## Performance Tuning
 

@@ -16,30 +16,34 @@
 #
 
 # Spark Neural Network Configuration
-# This configuration file links Spark MLlib to Neural Network capabilities
-# and integrates with Jury1981/Artemis1981 repository
+# This configuration file provides settings for organizing neural network operations
+# and Artemis1981 repository integration in Spark applications.
+#
+# Note: Apache Spark MLlib natively supports neural networks via MultilayerPerceptronClassifier.
+# The custom properties below provide a configuration framework for applications that use
+# neural networks and may integrate with the Artemis1981 repository.
 #
 # To use this configuration, copy it to conf/spark-defaults.conf:
 #   cp config/neural-network.conf.template conf/spark-defaults.conf
 
-# Neural Network Settings
+# Neural Network Settings (Custom application configuration)
 spark.mllib.neuralnetwork.enabled=true
 spark.mllib.neuralnetwork.defaultLayers=3
 spark.mllib.neuralnetwork.defaultActivation=sigmoid
 spark.mllib.neuralnetwork.learningRate=0.01
 spark.mllib.neuralnetwork.maxIterations=100
 
-# Mobile Broadband Neuro Network Settings
+# Mobile Broadband Neuro Network Settings (Custom application configuration)
 spark.broadband.neuro.enabled=true
 spark.broadband.neuro.batchSize=32
 spark.broadband.neuro.optimizer=adam
 
-# Artemis1981 Integration
+# Artemis1981 Integration Framework (Custom properties for integration)
 spark.artemis.repository=https://github.com/Jury1981/Artemis1981
 spark.artemis.integration.enabled=true
 spark.artemis.sync.interval=60
 
-# Performance Tuning for Neural Network Operations
+# Performance Tuning for Neural Network Operations (Standard Spark properties)
 spark.neuralnet.executor.memory=4g
 spark.neuralnet.driver.memory=2g
 spark.neuralnet.serializer=org.apache.spark.serializer.KryoSerializer
